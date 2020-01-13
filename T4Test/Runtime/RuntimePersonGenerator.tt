@@ -1,0 +1,16 @@
+<#@ template language="C#" linePragmas="false" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections.Generic" #>
+
+
+<# foreach (var param in Context.Params) { #>
+
+public class <#= param.ClassName #> {
+
+    public int RuntimeId { get; set; }
+    
+    public <#= param.Type #> <#= param.PropertyName #> { get; set; }
+
+}
+
+<# } #>

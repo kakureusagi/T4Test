@@ -1,0 +1,27 @@
+<#@ template language="C#" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections.Generic" #>
+
+<#
+
+	var values = new[] {
+		new {ClassName="Test1", Type="int", PropertyName="IntName"},
+		new {ClassName="Test2", Type="string", PropertyName="StringName"},
+		new {ClassName="Test3", Type="float", PropertyName="FloatName"},
+	};
+
+#>
+
+
+
+<# foreach (var value in values) { #>
+
+public class <#= value.ClassName #> {
+
+    public int Id { get; set; }
+    
+    public <#= value.Type #> <#= value.PropertyName #> { get; set; }
+
+}
+
+<# } #>
